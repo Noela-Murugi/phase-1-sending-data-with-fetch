@@ -49,7 +49,7 @@ const methodObj={
             },
     body: JSON.stringify(dataSubmit)
 };
-fetch('http://localhost:3000/users', methodObj)
+return fetch('http://localhost:3000/users', methodObj)
 .then(response => response.json())
 .then(users => {
     const newUserId = document.createElement('h1');
@@ -59,8 +59,8 @@ fetch('http://localhost:3000/users', methodObj)
     console.log(users);
 })
 .catch(function (error) {
-    alert("Error message alert");
-    console.log(error.message);
+ document.body.innerHTML = error.message
 })
 
 }
+
